@@ -339,7 +339,25 @@ jobs:
           echo "CONFIG_F2FS_FS_LZ4=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_F2FS_FS_LZ4HC=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_F2FS_FS_ZSTD=y" >> ./common/arch/arm64/configs/gki_defconfig
-          
+
+          # 加入串口驱动
+          echo "CONFIG_USB_SERIAL=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_SERIAL_CP210X=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_SERIAL_PL2303=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_SERIAL_CH341=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USB_SERIAL_FTDI_SIO=y" >> ./common/arch/arm64/configs/gki_defconfig
+
+          # 3. VirtIO全配置（兼容你的虚拟化设备）
+          echo "CONFIG_VIRTIO=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_VIRTIO_PCI=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_VIRTIO_PCI_LEGACY=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_VIRTIO_MMIO=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_VIRTIO_BLK=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_VIRTIO_NET=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_VIRTIO_NET_ANDROID_COMPAT=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_VIRTIO_GPU=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_VIRTIO_INPUT=y" >> ./common/arch/arm64/configs/gki_defconfig
+
           echo "CONFIG_ZSMALLOC=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_ZRAM=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_ZRAM_WRITEBACK=y" >> ./common/arch/arm64/configs/gki_defconfig
